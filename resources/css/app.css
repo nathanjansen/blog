@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior:smooth
+}
+
+i {
+    border: 1px solid lightgray;
+    background: #ececec;
+    padding: 1px 2px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-style: normal;
+    font-family: monospace;
+    font-size: small;
+}
+
+blockquote {
+    border-left: 4px solid rgb(97 161 70 / 0.7);
+    padding: 1rem;
+    background: #f9f8f880;
+    box-shadow: 0 0 9px 0 rgb(97 161 70 / 0.2);
+}
+
+pre {
+    padding: 30px 20px;
+    /*border-left: 4px solid rgb(97 161 70 / 0.7);*/
+    /*background: #f9f8f880;*/
+    margin-bottom: 1rem;
+    font-size: 14px;
+    overflow-x: auto;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+@keyframes shadows {
+    0% { box-shadow: 0 0 9px 0 rgb(97 161 70 / 0.1), 0 0 9px 0 rgb(97 161 70 / 0.1), 0 0 9px 0 rgb(97 161 70 / 0.2) }
+    50% { box-shadow: 0 0 9px 0 rgb(97 161 70 / 0.2), 0 0 9px 0 rgb(97 161 70 / 0.3), 0 0 9px 0 rgb(97 161 70 / 0.1) }
+    75% { box-shadow: 0 0 9px 0 rgb(97 161 70 / 0.3), 0 0 9px 0 rgb(97 161 70 / 0.2), 0 0 9px 0 rgb(97 161 70 / 0.0) }
+    100% { box-shadow: 0 0 9px 0 rgb(97 161 70 / 0.1), 0 0 9px 0 rgb(97 161 70 / 0.3), 0 0 9px 0 rgb(97 161 70 / 0.1) }
+}
+
+pre {
+    --tw-glow-opacity: 1;
+    color: rgb(97 161 70 / 0.2);
+    transition: all 0.8s ease-in-out;
+    -webkit-transition: all 0.8s ease-in-out;
+    position: relative;
+}
+
+pre:hover,
+.filename:hover,
+.label:hover {
+    /*border-left: 4px solid rgb(97 161 70 / 1);*/
+    box-shadow: 0 0 9px 0 rgb(97 161 70 / 0.5);
+}
+
+
+.filename,
+.label {
+    transition: all 0.8s ease-in-out;
+    -webkit-transition: all 0.8s ease-in-out;
+    position: relative;
+    z-index: 10;
+    margin-left: -0.5rem;
+    display: inline-block;
+    border-radius: 0.25rem;
+    --tw-bg-opacity: 1;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+    font-size: .7rem;
+    line-height: 1.25rem;
+    color: rgba(255,255,255,var(--tw-text-opacity));
+    --tw-text-opacity: 1;
+    flex: 0 1 auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px 1px;
+    color: #797979;
+}
+
+.label {
+    background-color: rgba(255, 255, 230, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.filename+pre,
+.label+pre {
+    margin-top: -1rem;
+}
+
+h2 {
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+h3 {
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+pre {
+    margin-top: 2rem;
+}
+
+p+p {
+    margin-top: 1.5rem;
+}
+
+pre+p {
+    margin-top: 3rem;
+}
+
+ul, ol {
+    margin-bottom: 2rem;
+}
+
+hr {
+    margin: 2rem 0;
+}
