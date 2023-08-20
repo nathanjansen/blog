@@ -9,6 +9,7 @@
 
 ## TODO
 [ ] Have one place to manage the styling of components
+[ ] Subtract Scribe as a separate package
 
 ## Using components in a .md file
 
