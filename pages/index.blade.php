@@ -1,19 +1,19 @@
-<?php
+<?php \Laravel\Folio\name('articles'); ?>
+
+@php
 
 use App\Models\Post;
-use function Laravel\Folio\name;
-
-name('articles');
 
 $posts = Post::current();
 
-?>
+@endphp
 
 <x-layout class="flex flex-col gap-8">
 
     <header>
-        <h1 class="font-cal font-thin tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600 text-2xl text-white uppercase subpixel-antialiased rounded-md"
-        >nathanjansen.dev</h1>
+        <h1 class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400 text-5xl leading-normal font-sans">
+            nathanjansen.dev
+        </h1>
         <div class="text-gray-500 font-thin border-white">All things Laravel</div>
     </header>
 
@@ -21,14 +21,17 @@ $posts = Post::current();
         @foreach ($posts as $post)
             <article class="group relative flex flex-row justify-between items-center">
                 <div>
-                    <h2 class="font-extralight text-primary-500 text-xl tracking-tight dark:text-zinc-100 mt-0 mb-0">
-                        <div
-                            class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-primary-50 drop-shadow-sm opacity-50 opacity-0 transition transition-all duration-500 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-                        <a href="{{ $post->route() }}"><span
+                    <h2 class="font-extralight text-primary-500 text-2xl tracking-tight dark:text-zinc-100 mt-0 mb-0">
+                        <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-gradient-to-r bg-primary-50 drop-shadow-sm opacity-0 transition transition-all duration-500 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
+
+                        <a href="{{ $post->route() }}">
+                            <span
                                 class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span><span
-                                class="relative z-10">{!! $post->title !!}</span></a></h2>
+                                class="relative z-10">{!! $post->title !!}</span>
+                        </a>
+                    </h2>
                     <time
-                        class="font-thin relative z-10 flex items-center text-xs text-gray-400 dark:text-zinc-500"
+                        class="font-thin relative z-10 flex items-center text-xs text-gray-500 dark:text-zinc-500 mt-1"
                         datetime="2022-09-05">
                         {{ now()->parse($post->date)->format('F d, Y') }}
                     </time>

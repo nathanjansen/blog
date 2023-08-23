@@ -2,6 +2,8 @@
 
 namespace App\Support\Scribe\Concerns;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Support\HtmlString;
 use Sushi\Sushi;
 
 trait HasScribe
@@ -17,6 +19,11 @@ trait HasScribe
         static::$posts[] = $post;
 
         return $post;
+    }
+
+    public function render()
+    {
+        return new HtmlString(\App\Support\Scribe\Scribe::render($this->body));
     }
 
     public function __destruct()

@@ -11,8 +11,6 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-use League\CommonMark\Extension\CommonMark\Node\Block\Heading;
-
 return [
 
     /*
@@ -53,6 +51,7 @@ return [
         League\CommonMark\Extension\DefaultAttributes\DefaultAttributesExtension::class,
         League\CommonMark\Extension\DisallowedRawHtml\DisallowedRawHtmlExtension::class,
         League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension::class,
+        League\CommonMark\Extension\Strikethrough\StrikethroughExtension::class,
         League\CommonMark\Extension\Table\TableExtension::class,
         League\CommonMark\Extension\TaskList\TaskListExtension::class,
         Torchlight\Commonmark\V2\TorchlightExtension::class,
@@ -170,23 +169,7 @@ return [
         'symbol' => '#',
     ],
 
-    'default_attributes' => [
-        Heading::class => [
-            'class' => static fn (Heading $node) => match($node->getLevel()) {
-                2 => 'text-2xl -ml-7 text-3xl font-semibold flex gap-2 group',
-                3 => 'text-xl -ml-5 font-semibold flex gap-2 group',
-                default => null,
-            },
-        ],
-        League\CommonMark\Extension\CommonMark\Node\Inline\Link::class => [
-            'wire:navigate' => true,
-            'class' => 'transition transition-all inline-flex items-center underline decoration-primary-500 underline-offset-1 hover:underline-offset-2',
-        ],
-        League\CommonMark\Extension\CommonMark\Node\Inline\Code::class => [
-            'class' => 'text-base bg-gray-100 rounded border px-1',
-        ],
-        League\CommonMark\Extension\CommonMark\Node\Block\ListBlock::class => [],
-    ],
+    'default_attributes' => [],
 
     'disallowed_raw_html' => [
         'disallowed_tags' => ['title', 'textarea', 'style', 'xmp', 'iframe', 'noembed', 'noframes', 'script', 'plaintext', 'x-*'],

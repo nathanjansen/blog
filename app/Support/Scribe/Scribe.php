@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static \App\Support\Scribe\ScribeManager exists()
  * @method static \App\Support\Scribe\ScribeManager lastId()
  * @method static \App\Support\Scribe\ScribeManager freshId()
- * @method static \App\Support\Scribe\ScribeManager render()
+ * @method static string render($html)
  * @method static \App\Support\Scribe\ScribeManager compileBladeExpression()
  * @method static \App\Support\Scribe\ScribeManager registerBladeDirective()
  * @method static \App\Support\Scribe\ScribeManager registerBladeDirectives()

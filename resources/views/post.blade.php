@@ -34,7 +34,7 @@
     </h1>
 
     <div class="text-xl leading-relaxed font-light text-gray-800">
-        {!! \App\Support\Scribe\Scribe::render($post) !!}
+        {!! $post->render() !!}
     </div>
 
     @if ($footnotes ?? null)

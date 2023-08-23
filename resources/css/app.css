@@ -6,6 +6,31 @@ html {
     scroll-behavior:smooth
 }
 
+pre {
+    @apply rounded overflow-x-auto;
+}
+
+pre code.torchlight {
+    @apply
+        text-base
+        block
+        min-w-max
+    ;
+}
+
+pre code.torchlight .line {
+    @apply px-4;
+}
+
+/*
+ Push the code away from the line numbers and
+ summary caret indicators.
+*/
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+    @apply mr-4;
+}
+
 i {
     border: 1px solid lightgray;
     background: #ececec;
@@ -26,8 +51,6 @@ blockquote {
 
 pre {
     padding: 30px 20px;
-    /*border-left: 4px solid rgb(97 161 70 / 0.7);*/
-    /*background: #f9f8f880;*/
     margin-bottom: 1rem;
     font-size: 14px;
     overflow-x: auto;
@@ -57,7 +80,6 @@ pre {
 pre:hover,
 .filename:hover,
 .label:hover {
-    /*border-left: 4px solid rgb(97 161 70 / 1);*/
     box-shadow: 0 0 9px 0 rgb(97 161 70 / 0.5);
 }
 
@@ -93,16 +115,6 @@ pre:hover,
 .filename+pre,
 .label+pre {
     margin-top: -1rem;
-}
-
-h2 {
-    margin-bottom: 2rem;
-    margin-top: 4rem;
-}
-
-h3 {
-    margin-bottom: 2rem;
-    margin-top: 4rem;
 }
 
 pre {

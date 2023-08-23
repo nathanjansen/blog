@@ -6,7 +6,7 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
-        "./config/markdown.php",
+        "./config/scribe.php",
     ],
     theme: {
         fontFamily: {

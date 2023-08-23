@@ -66,13 +66,13 @@ class ScribeManager
         return static::lastId() ? (static::lastId() + 1) : 1;
     }
 
-    public function render($post)
+    public function render($body): ?string
     {
-        if (! $post->body) {
+        if (! $body) {
             return null;
         }
 
-        $body = Markdown::convert($post->body);
+        $body = Markdown::convert($body);
 
         if (empty($body)) {
             return null;
@@ -81,7 +81,7 @@ class ScribeManager
         return Blade::render((string) $body);
     }
 
-    public function compileBladeExpression(string $expression)
+    public function compileBladeExpression(string $expression): array
     {
         $parts = explode(',', $expression);
 
@@ -96,7 +96,7 @@ class ScribeManager
         return [$slot, $attributes];
     }
 
-    public function registerBladeDirective($directive)
+    public function registerBladeDirective($directive): void
     {
         Blade::directive($directive, function ($expression) use ($directive) {
 
@@ -106,7 +106,7 @@ class ScribeManager
         });
     }
 
-    public function registerBladeDirectives($directives)
+    public function registerBladeDirectives($directives): void
     {
         $directives = is_array($directives) ? $directives : func_get_args();
 
