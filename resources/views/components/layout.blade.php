@@ -13,7 +13,7 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body {{ $attributes->class(['max-w-3xl mx-auto my-4']) }}>
+<body {{ $attributes->class(['font-inter max-w-3xl mx-auto my-4']) }}>
 
 {{ $slot }}
 

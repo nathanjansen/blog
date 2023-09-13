@@ -56,7 +56,6 @@ class ScribeServiceProvider extends ServiceProvider
             'ul' => [
                 'class' => ListBlock::class,
                 'type' => ListBlock::TYPE_BULLET,
-                'method' => static fn($node) => $node->type === ListBlock::TYPE_BULLET ? $value : ListBlock::class,
             ],
             'ol' => [
                 'class' => ListBlock::class,
@@ -94,17 +93,10 @@ class ScribeServiceProvider extends ServiceProvider
             );
         }
 
-//        foreach (config('scribe.markdown.elements.fenced', []) as $key => $value) {
-//            config()->set(
-//                key: 'markdown.default_attributes.' . FencedCode::class .'.' . $key,
-//                value: static fn (FencedCode $node) => $node->data->set($key, $value)
-//            );
-//        }
-
-        config()->set('markdown.default_attributes.' . FencedCode::class, [
+        config(['markdown.default_attributes.' . FencedCode::class => [
             'class' => 'bg-primary-500',
             'data-attribute' => 'hi',
-        ]);
+        ]]);
 
         $skipAttributes = ['fenced', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
@@ -122,17 +114,9 @@ class ScribeServiceProvider extends ServiceProvider
 
             if (is_array($node)) {
                 continue;
-                dd('different logic', $node);
             }
 
-            config()->set(
-                'markdown.default_attributes.' . $node,
-                $attributes
-            );
+            config(['markdown.default_attributes.' . $node => $attributes]);
         }
-
-//        dd(config('markdown.default_attributes'));
-//
-//        config()->set('markdown.default_attributes', $defaultAttributes);
     }
 }

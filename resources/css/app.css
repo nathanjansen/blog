@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: "Inter var", "system-ui";
+    }
+}
+
 html {
+    font-family: "Inter", "system-ui";
     scroll-behavior:smooth
 }
 
 pre {
-    @apply rounded overflow-x-auto;
+    @apply text-sm overflow-x-auto shadow-[0_0_15px_rgba(0,0,0,0.1)] backdrop-blur-[5px] mb-4 px-5 py-[30px] rounded-2xl;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 pre code.torchlight {
@@ -31,37 +39,6 @@ pre code.torchlight .summary-caret {
     @apply mr-4;
 }
 
-i {
-    border: 1px solid lightgray;
-    background: #ececec;
-    padding: 1px 2px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-style: normal;
-    font-family: monospace;
-    font-size: small;
-}
-
-blockquote {
-    border-left: 4px solid rgb(97 161 70 / 0.7);
-    padding: 1rem;
-    background: #f9f8f880;
-    box-shadow: 0 0 9px 0 rgb(97 161 70 / 0.2);
-}
-
-pre {
-    padding: 30px 20px;
-    margin-bottom: 1rem;
-    font-size: 14px;
-    overflow-x: auto;
-
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-
 @keyframes shadows {
     0% { box-shadow: 0 0 9px 0 rgb(97 161 70 / 0.1), 0 0 9px 0 rgb(97 161 70 / 0.1), 0 0 9px 0 rgb(97 161 70 / 0.2) }
     50% { box-shadow: 0 0 9px 0 rgb(97 161 70 / 0.2), 0 0 9px 0 rgb(97 161 70 / 0.3), 0 0 9px 0 rgb(97 161 70 / 0.1) }
@@ -83,33 +60,32 @@ pre:hover,
     box-shadow: 0 0 9px 0 rgb(97 161 70 / 0.5);
 }
 
-
 .filename,
 .label {
-    transition: all 0.8s ease-in-out;
-    -webkit-transition: all 0.8s ease-in-out;
-    position: relative;
-    z-index: 10;
-    margin-left: -0.5rem;
-    display: inline-block;
-    border-radius: 0.25rem;
-    --tw-bg-opacity: 1;
-    background-color: white;
-    padding: 0.5rem 1rem;
-    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
-    font-size: .7rem;
-    line-height: 1.25rem;
-    color: rgba(255,255,255,var(--tw-text-opacity));
-    --tw-text-opacity: 1;
-    flex: 0 1 auto;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px 1px;
-    color: #797979;
+    @apply
+        font-mono
+        transition-all
+        duration-[0.8s]
+        ease-[ease-in-out]
+        relative
+        z-10
+        ml-[-0.5rem]
+        inline-block
+        rounded
+        bg-white
+        text-[0.7rem]
+        leading-5
+        text-[rgba(255,255,255,var(--tw-text-opacity))]
+        flex-initial
+        shadow-[rgba(0,0,0,0.1)_0_0_5px_1px]
+        text-[#797979]
+        px-4
+        py-2
+    ;
 }
 
 .label {
-    background-color: rgba(255, 255, 230, 0.8);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    @apply bg-[rgba(255,255,230,0.8)] backdrop-blur-[5px];
 }
 
 .filename+pre,
@@ -131,8 +107,4 @@ pre+p {
 
 ul, ol {
     margin-bottom: 2rem;
-}
-
-hr {
-    margin: 2rem 0;
 }

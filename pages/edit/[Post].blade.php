@@ -51,7 +51,10 @@
 
 <?php
 
+use function Laravel\Folio\middleware;
 use Livewire\Volt\Component;
+
+middleware('auth');
 
 new class extends Component {
     public $post;

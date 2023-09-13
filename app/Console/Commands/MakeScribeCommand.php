@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use App\Support\Scribe\Scribe;
-use App\Support\Scribe\ScribeManager;
 use Illuminate\Console\Command;
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\text;

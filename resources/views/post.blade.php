@@ -1,6 +1,6 @@
-<x-layout class="flex flex-col gap-8">
-    <aside class="flex justify-between">
-        <div class="flex items-center gap-1">
+<x-layout class="post flex flex-col gap-4 md:gap-8 px-4 md:px-0">
+    <aside class="md:flex justify-between">
+        <div class="md:flex items-center gap-1">
             <span> « </span>
             <x-a href="{{ route('articles') }}">back</x-a>
 
@@ -15,21 +15,23 @@
         </div>
 
         <button x-convey-subscribe
-             class="group transition transition-all duration-1000 flex gap-1 border-2 px-2 py-1 rounded-xl border-gray-400 text-gray-400 items-center hover:text-gray-600 hover:border-gray-600"
+             class="group transition transition-all duration-1000 flex gap-1 border-2 px-2 py-1 rounded-xl border-gray-400 text-gray-400 items-center hover:text-gray-600 hover:border-primary-600"
         >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                 class="transition transition-all duration-1000 animate-pulse w-5 h-5 group-hover:w-6 group-hover:h-6"
+                 class="transition transition-all duration-1000 animate-pulse w-5 h-5 group-hover:w-6 group-hover:h-6 group-hover:text-primary-500"
             >
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
             </svg>
 
-            <div>
+            <div class="transition transition-all duration-1000 group-hover:text-primary-700">
                 Subscribe
             </div>
         </button>
     </aside>
 
-    <h1 class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400 text-5xl leading-normal font-sans">
+    <h1 class="text-transparent py-1 bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400 text-4xl md:text-5xl"
+        style="line-height: 60px"
+    >
         {!! $post->title !!}
     </h1>
 

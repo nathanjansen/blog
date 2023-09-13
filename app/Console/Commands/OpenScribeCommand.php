@@ -4,10 +4,11 @@ namespace App\Console\Commands;
 
 use App\Models\Post;
 use Illuminate\Console\Command;
+use function Laravel\Prompts\table;
 
 class OpenScribeCommand extends Command
 {
-    protected $signature = 'scribe:open {id}';
+    protected $signature = 'open:scribe {id}';
 
     public function handle()
     {

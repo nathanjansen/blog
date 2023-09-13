@@ -35,4 +35,9 @@ trait HasScribe
     {
         return static::$posts;
     }
+
+    public function isPublished()
+    {
+        return $this->state === 'published';
+    }
 }
